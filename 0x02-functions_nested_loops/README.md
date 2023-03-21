@@ -7,3 +7,4 @@
 6. There is no such thing as absolute value in this world. You can only estimate what a thing is worth to you: a function that computes the absolute value of an integer.
 7. There are only 3 colors, 10 digits, and 7 notes; it's what we do with them that's important: a function that prints the last digit of a number, and Returns the value of the last digit.
 8. I'm federal agent Jack Bauer, and today is the longest day of my life: a function that prints every minute of the day of Jack Bauer, starting from 00:00 to 23:59.
+9. Learn your times table: a function that prints the 9 times table, starting with 0.

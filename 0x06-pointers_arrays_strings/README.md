@@ -3,3 +3,4 @@
 2. strncpy: function that copies a string.
 3. strcmp: function that compares two strings.
 4. rev_array: function that reverses the content of an array of integers.
+5. string_toupper: function that changes all lowercase letters of a string to uppercase.

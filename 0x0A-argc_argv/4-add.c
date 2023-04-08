@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	for (j = 1; j < argc; j++)
 	{
 		if (isdigit(argv[j][0]))
-			count += atoi(argv[j]);
+			count = count + atoi(argv[j]);
 		else
 		{
 			printf("Error\n");

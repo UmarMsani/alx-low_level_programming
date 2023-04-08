@@ -11,17 +11,17 @@
 
 int main(int argc, char *argv[])
 {
-	int i, count = 0;
+	int j, count = 0;
 
 	if (argc == 1)
 	{
 		printf("0\n");
 		return (0);
 	}
-	for (i = 1; i < argc; i++)
+	for (j = 1; j < argc; j++)
 	{
-		if (isdigit(argv[i][0]))
-			count += atoi(argv[i]);
+		if (isdigit(argv[j][0]))
+			count += atoi(argv[j]);
 		else
 		{
 			printf("Error\n");

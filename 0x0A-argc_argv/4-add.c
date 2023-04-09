@@ -14,20 +14,20 @@ int main(int argc, char *argv[])
 	int j, count = 0;
 
 	if (argc == 1)
-	{
+		{
 		printf("%d\n", 0);
 		return (0);
-	}
+		}
 	for (j = 1; j < argc; j++)
-	{
+		{
 		if (isdigit(argv[j][0]))
 			count += atoi(argv[j]);
 		else
-		{
+			{
 			printf("Error\n");
 			return (1);
+			}
 		}
-	}
 	printf("%d\n", count);
 	return (0);
 }

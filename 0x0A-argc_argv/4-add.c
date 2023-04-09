@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 {
 	int j, count = 0;
 
-	if (argc == 1)
+	if (argc < 1)
 	{
 		printf("0\n");
 		return (0);
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	for (j = 1; j < argc; j++)
 	{
 		if (isdigit(argv[j][0]))
-			count = count + atoi(argv[j]);
+			count += atoi(argv[j]);
 		else
 		{
 			printf("Error\n");

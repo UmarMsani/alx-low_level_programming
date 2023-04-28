@@ -8,10 +8,7 @@
 
 size_t print_list(const list_t *h)
 {
-	size_t count = 0;/* To count the number of nodes*/
-
-	if (h == NULL)
-		return (0);
+	size_t count = 0; /* To count the number of nodes*/
 
 	while (h != NULL)
 	{

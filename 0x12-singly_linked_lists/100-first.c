@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+/* syntax,will tells compiler to treat printmessage function as constructor */
 void printmessage(void)__attribute__((constructor));
 
 /**

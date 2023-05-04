@@ -18,8 +18,10 @@ int get_bit(unsigned long int n, unsigned int index)
 		return (-1);
 	}
 
+	unsigned long int mask;
+
 	/* Shift the number to the left by index bits */
-	unsigned long int mask = 1UL << index;
+	mask = 1UL << index;
 	/* Use bitwise AND to get the value of the bit at the index */
 	int bit = (n & mask) != 0;
 

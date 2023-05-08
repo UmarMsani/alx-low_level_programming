@@ -5,42 +5,43 @@
  * @letters: num of letters to read and print
  * @filename: file name to read
  *
- * Return: actual num of letters it could read and print
+ * Return: actual num of letters it could read & print
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *file;
+	ssize_t firts_len, second_len;
 	char *buffer;
-	ssize_t read_bytes;
+	int fille;
 
 	if (filename == NULL)
+		return (0);
+	/* open file with read only mode */
+	fille = open(filename, O_RDONLY);
+	/* check if the opened */
+	if (fille == -1)
 	{
 		return (0);
 	}
-	file = fopen(filename, "r");
 
-	if (file == NULL)
-	{
-		return (0);
-	}
-	buffer = (char *) malloc(letters + 1);
+	buffer = malloc(sizeof(char) * letters);
 
 	if (buffer == NULL)
 	{
-		fclose(file);
+		close(fille);
 		return (0);
 	}
-	read_bytes = fread(buffer, sizeof(char), letters, file);
-
-	if (ferror(file) != 0)
+	firts_len = read(fille, buffer, letters);
+	close(fille);
+	if (firts_len == -1)
 	{
-		fclose(file);
 		free(buffer);
 		return (0);
 	}
-
-	fclose(file);
+	second_len = write(STDOUT_FILENO, buffer, firts_len);
 	free(buffer);
-	return read_bytes;
+	if (firts_len != second_len)
+		return (0);
+	/* Return actual number of bytes read & printed to STDOUT*/
+	return (second_len);
 }

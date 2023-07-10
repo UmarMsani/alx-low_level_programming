@@ -9,6 +9,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <string.h>
+#include <errno.h>
 
 int append_text_to_file(const char *filenames, char *text_contents);
 int _putchar(char c);

@@ -1,8 +1,8 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_create - To creates a hash table
- * @size: Is the size of the array
+ * hash_table_create - Creates a hash table
+ * @size: The size of the array
  *
  * Return: A pointer to the newly created hash table, or NULL if failed
  */
@@ -20,8 +20,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 	new_table->array = malloc(sizeof(hash_node_t *) * size);
 	if (new_table->array == NULL)
 	{
+		free(new_table);
 		return (NULL);
 	}
+
 	for (i = 0; i < size; i++)
 		new_table->array[i] = NULL;
 

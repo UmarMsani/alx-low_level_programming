@@ -1,7 +1,7 @@
 # Makefile for building 'school' executable
 
 CC = gcc
-SRC = main.c file1.c file2.c  # Add all your .c files here
+SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 

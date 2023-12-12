@@ -1,26 +1,6 @@
 #include "search_algos.h"
 
 /**
- * print_array - Prints an array between given indices
- * @array: Pointer to the first element of the array
- * @left: Left index of the array
- * @right: Right index of the array
- */
-/*void print_array(int *array, size_t left, size_t right)
-{
-	size_t i;
-
-	printf("Searching in array: ");
-	for (i = left; i <= right; ++i)
-	{
-		if (i != left)
-			printf(", ");
-		printf("%d", array[i]);
-	}
-	printf("\n");
-}*/
-
-/**
  * advanced_binary_recursive - Searches for a value in a
  * sorted array using Binary search recursively
  * @array: Pointer to the first element of the array

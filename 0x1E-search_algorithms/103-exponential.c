@@ -1,56 +1,65 @@
 #include "search_algos.h"
 
 /**
- * binary_search - Searches for a value in a sorted array using Binary search
+ * _binary_search - Searches for a value in a sorted array using Bnry search
  * @array: Pointer to the first element of the array
- * @left: Left index of the array to search
- * @right: Right index of the array to search
+ * @left: Left index of the array
+ * @right: Right index of the array
  * @value: Value to search for
  *
  * Return: Index where value is located or -1 if not found
  */
-int binary_search(int *array, int left, int right, int value)
+
+int _binary_search(int *array, size_t left, size_t right, int value)
 {
-	int mid;
+	size_t j;
 
-	while (left <= right)
+	if (array == NULL)
+		return (-1);
+
+	while (right >= left)
 	{
-		mid = left + (right - left) / 2;
+		printf("Searching in array: ");
+		for (j = left; j < right; j++)
+			printf("%d, ", array[j]);
+		printf("%d\n", array[j]);
 
-		if (array[mid] == value)
-			return (mid);
-		else if (array[mid] < value)
-			left = mid + 1;
+		j = left + (right - left) / 2;
+		if (array[j] == value)
+			return (j);
+		if (array[j] > value)
+			right = j - 1;
 		else
-			right = mid - 1;
+			left = j + 1;
 	}
+
 	return (-1);
 }
 
 /**
- * exponential_search - Search a value in sorted array using Expo. search
+ * exponential_search - Searches for value in a sorted array
+ * using Exponential search
  * @array: Pointer to the first element of the array
  * @size: Number of elements in the array
  * @value: Value to search for
  *
  * Return: Index where value is located or -1 if not found
  */
+
 int exponential_search(int *array, size_t size, int value)
 {
-	int i;
-	int left = i / 2;
-	int right = (i < size) ? i : size - 1;
+	size_t k = 0, right;
 
-	if (array == NULL || size == 0)
+	if (array == NULL)
 		return (-1);
 
-	if (array[0] == value)
-		return (0);
+	if (array[0] != value)
+	{
+		for (k = 1; k < size && array[k] <= value; k = k * 2)
+			printf("Value checked array[%ld] = [%d]\n", k, array[k]);
+	}
 
-	i = 1;
-
-	while (i < size && array[i] <= value)
-		i *= 2;
-
-	return (binary_search(array, left, right, value));
+	right = k < size ? k : size - 1;
+	printf("Value found between indexes [%ld] and [%ld]\n", k / 2, right);
+	return (_binary_search(array, k / 2, right, value));
 }

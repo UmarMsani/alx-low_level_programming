@@ -1,18 +1,18 @@
 #ifndef SEARCH_ALGOS_H
 #define SEARCH_ALGOS_H
 
+#include <stdlib.h>
 #include <math.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
- * struct listint_s - singly linked list
+ * struct listint_s - Singly linked list
  *
- * @n: Integer
- * @index: Index of the node in the list
- * @next: Pointer to the next node
+ * @n: an Integer
+ * @index: is anIndex of the node in the list
+ * @next: pointer to the next node
  *
- * Description: singly linked list node structure
+ * Description: is a singly linked list node structure
  * for Holberton project
  */
 typedef struct listint_s
@@ -23,14 +23,14 @@ typedef struct listint_s
 } listint_t;
 
 /**
- * struct skiplist_s - Singly linked list with an express lane
+ * struct skiplist_s - singly linked list with express lane
  *
- * @n: Integer
- * @index: Index of the node in the list
- * @next: Pointer to the next node
- * @express: Pointer to the next node in the express lane
+ * @n: An integer
+ * @index: index of the node in the list
+ * @next: is a pointer to the next node
+ * @express: Pointer to next node in the express lane
  *
- * Description: singly linked list node structure with an express lane
+ * Description: Singly linked list node structure with express lane
  * for Holberton project
  */
 typedef struct skiplist_s
